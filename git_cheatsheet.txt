@@ -5,3 +5,23 @@ git show: Outputs content changes of the specified commit
 git diff --color-words: Output has only the color-coded words that have changed
 git diff –staged: Shows the file differences between staging and the last committed version
 git diff .path/to/file: Shows changes in a file compared to the previous commit
+
+Branch Operations
+You can do the following with branch:
+
+Creating new branch: git checkout -b <branch-name>
+Pushing branch from local to remote repo: git push origin <branch-name>
+Renaming branch:
+Renaming local branch: git branch -m old-name new-name
+Renaming remote branch: git push origin :old-name new-name
+Deleting branch:
+Deleting local branch: git branch -d <branch-name>
+Deleting remote branch: git push origin -d <branch-name>
+
+Cheat Sheet
+git merge <branch>: Merges <branch> to current branch
+git rebase <base>: Rebases the current branch onto the base (branch name, commit ID, tag)
+git rebase -i <base>: Performs interactive rebase. Launches editor where you can specify command on each commit to transform it.
+git rebase --abort: Cancels rebasing and goes back to the previous commit
+git rebase --continue: Continues rebasing after resolving the rebase conflicts
+git pull --rebase: Fetches the remote copy and rebases it into the current branch of the local copy
